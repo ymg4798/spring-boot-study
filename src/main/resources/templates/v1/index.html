@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<p th:text="${result}">test</p>
+
+<div>
+	<form name="frm" method="post" action="/v1/valid" th:object="${valids}">
+
+		<div th:if="${#fields.hasGlobalErrors()}">
+			<p class="field-error"
+			   th:each="err : ${#fields.globalErrors()}"
+			   th:text="${err}">
+				글로벌 오류 메시지
+			</p>
+		</div>
+
+		<label th:for="name">이름</label>
+		<input type="text" th:field="*{name}" th:errorclass="field-error" class="form-control" placeholder="이름을 입력하세요">
+		<div class="field-error" th:errors="*{name}">이름 오류</div>
+
+		<label th:for="age">나이</label>
+		<input type="number" th:field="*{age}" th:errorclass="field-error" class="form-control" placeholder="나이을 입력하세요">
+		<div class="field-error" th:errors="*{age}">나이 오류</div>
+
+		<label th:for="value">값</label>
+		<input type="text" th:field="*{value}" th:errorclass="field-error" class="form-control" placeholder="값을 입력하세요">
+		<div class="field-error" th:errors="*{value}">값 오류</div>
+
+		<input type="submit" value="등록">
+	</form>
+</div>
+</body>
+</html>

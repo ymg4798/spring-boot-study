@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Hello</title>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+
+	<script>
+
+	</script>
+</head>
+<body>
+<p th:text="${result}">test</p>
+<p th:text="${error}">test</p>
+	<form name="frm" method="POST" action="/v1/valid">
+		이름: <input type="text" name="name"/><br>
+		나이: <input type="number" name="age"/><br>
+		값: <input type="text" name="value"><br>
+		<input type="submit" value="등록">
+	</form>
+</body>
+</html>
