@@ -8,7 +8,7 @@
 <p th:text="${result}">test</p>
 
 <div>
-	<form name="frm" method="post" action="/v1/valid" th:object="${valids}">
+	<form name="frm" method="post" action="/v4/valid" th:object="${valids}">
 
 		<div th:if="${#fields.hasGlobalErrors()}">
 			<p class="field-error"
@@ -23,7 +23,7 @@
 		<div class="field-error" th:errors="*{name}">이름 오류</div>
 
 		<label th:for="age">나이</label>
-		<input type="number" th:field="*{age}" th:errorclass="field-error" class="form-control" placeholder="나이을 입력하세요">
+		<input type="text" th:field="*{age}" th:errorclass="field-error" class="form-control" placeholder="나이을 입력하세요">
 		<div class="field-error" th:errors="*{age}">나이 오류</div>
 
 		<label th:for="value">값</label>
