@@ -39,7 +39,7 @@ public class ValidControllerV4 {
         model.addAttribute("result", "성공");
         return "v1/index";
     }
-    /*
+
     /*@PostMapping("/v4/valid")
     public String validV4(@ModelAttribute Valids valids, BindingResult bindingResult, Model model) {
 
